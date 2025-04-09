@@ -17,18 +17,18 @@ jobs:
     steps:
       # 1. Check out the repository's code
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # 2. Set up JDK (Java Development Kit)
       - name: Set up JDK 11
-        uses: adoptium/temurin-actions/setup-java@v2
+        uses: adoptium/temurin-actions/setup-java@v3
         with:
           java-version: '11'
           distribution: 'temurin'  # You can use 'openjdk' or 'adoptopenjdk'
 
       # 3. Cache Maven dependencies (to speed up subsequent builds)
       - name: Cache Maven dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.m2/repository  # Maven's default local repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}  # Cache key based on the pom.xml file
