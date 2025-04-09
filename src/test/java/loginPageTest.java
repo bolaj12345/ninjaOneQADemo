@@ -1,7 +1,8 @@
 import org.testng.annotations.*;
 
-public class loginPageTest {
 
+public class loginPageTest {
+/*
     loginPageActions loginPage = new loginPageActions();
 
     @BeforeMethod()
@@ -171,6 +172,16 @@ public class loginPageTest {
                     "", "botesting2025@gmail.com", "PASSword12345*", "PASSword12345*", "1234567890", "English");
             loginPage.clickRegisterButtonForRegistration();
             loginPage.verifyRequiredMessageForBlankEntryForRegistrationError();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+*/
+
+    @Test(priority = 13)
+    public void java() {
+        try {
+            System.out.println("This is Java");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -11,7 +11,7 @@ public class loginPageActions {
 
     Playwright playwright = Playwright.create();
     BrowserType browserType = playwright.chromium();
-    Browser browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(200));
+    Browser browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(1000));
    // Browser browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(false));
     BrowserContext context = browser.newContext();
     Page page = context.newPage();
@@ -46,6 +46,7 @@ public class loginPageActions {
     public void clickOnSignInButton() {
         assertThat(page.getByText("Sign in")).isVisible();
         page.getByText("Sign in").click();
+        page.waitForTimeout(1000);
     }
 
     public void verifySuccessfulLoginLandingScreen() {
@@ -135,6 +136,7 @@ public class loginPageActions {
     public void clickRegisterButtonForRegistration() {
         assertThat(page.getByText("Register")).isVisible();
         page.locator("xpath=//*[@id=\"root\"]/div/div/div/form/button").click();
+        page.waitForTimeout(1000);
     }
 
     public void verifySuccessfulRegistration() {
@@ -153,6 +155,7 @@ public class loginPageActions {
     }
 
     public void clickRegistrationRegisterButton() {
+        page.waitForTimeout(1000);
         clickRegisterButtonForRegistration();
         verifySuccessfulRegistration();
     }
