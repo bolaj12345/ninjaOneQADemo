@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adoptopenjdk'  # You can use 'openjdk' or 'adoptopenjdk'
+          distribution: 'adoptium'  # You can use 'openjdk' or 'adoptopenjdk'
 
       # 3. Cache Maven dependencies (to speed up subsequent builds)
       - name: Cache Maven dependencies
